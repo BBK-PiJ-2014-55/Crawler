@@ -24,7 +24,7 @@ public interface HTMLread {
     /**
      * Accepts an instance of an InputStream.
      * It consumes up to and including the first non-whitespace character from the InputStream or up to and including ch.
-     * 
+     *
      *@param ch
      */
     public void skipSpace();
