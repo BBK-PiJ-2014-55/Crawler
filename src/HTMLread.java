@@ -2,29 +2,36 @@
  * Created by karolsudol on 24/03/15.
  */
 
-import java.io.Reader;
-import java.io.IOException;
 import java.io.InputStream;
 
 // class to accept stream and constructing strings from information read
 
 public class HTMLread {
 
+    //position of read character
+    private int charRead;
+
+    //constructor
+    public HTMLread() {
+    }
+
     /**
      * It accepts stream and stops program when a the same character is encountered (ignoring case).
      * True if ch1 and ch2 are present;
      *
-     * @param InputStream input;
+     * @param con;
      *
-     * @param char ch1;
+     * @param ch1;
      *
-     * @param char ch2;
+     * @param ch2;
      *
      *
-     * @return boolean;
+     * @return boolean found;
      *
      */
-     public void readUntil(Reader con, char ch1, char ch2){
+     public boolean readUntil(InputStream con, char ch1, char ch2){
+         boolean found = false;
+         return  found;
 
      }
 
@@ -33,14 +40,16 @@ public class HTMLread {
      * It accepts input and stops program until non-whitespace character or ch (including) and
      * returns smallest value of char, otherwise returns non-whitespace char that was read.
      *
-     * @param InputStream input;
+     * @param input;
      *
-     * @param char ch;
+     * @param ch;
      *
-     * @return char resultChar
+     * @return resultChar;
      *
      */
-    public void skipSpace(){
+    public char skipSpace(InputStream input, char ch){
+        char resultChar = Character.MIN_VALUE;
+        return resultChar;
 
     }
 
@@ -48,19 +57,18 @@ public class HTMLread {
      * It accepts stream and stops program when a the same character is encountered: ch1 ch2.
      * If true returns: ordered characters from input as String.
      *
+     * @param input;
      *
+     * @param ch1;
      *
-     * @param InputStream input
+     * @param ch2;
      *
-     * @param char ch1
-     *
-     * @param char ch2;
-     *
-     * @return str result;
+     * @return result;
      *
      */
-
-    readString(){
+    public String readString(InputStream input, char ch1, char ch2 ){
+        String result = "";
+        return result;
 
     }
 
