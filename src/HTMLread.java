@@ -1,33 +1,75 @@
 /**
  * Created by karolsudol on 24/03/15.
  */
-public interface HTMLread {
+
+import java.io.Reader;
+import java.io.IOException;
+import java.io.InputStream;
+
+// class to accept stream and constructing strings from information read
+
+public class HTMLread {
+
+    /**
+     * It accepts stream and stops program when a the same character is encountered (ignoring case).
+     * True if ch1 and ch2 are present;
+     *
+     * @param InputStream input;
+     *
+     * @param char ch1;
+     *
+     * @param char ch2;
+     *
+     *
+     * @return boolean;
+     *
+     */
+     public void readUntil(Reader con, char ch1, char ch2){
+
+     }
 
 
     /**
-     * This method accepts an instance of an InputStream and two char’s as parameters,
-     * and consumes characters from the InputStream.
-     * It stops when a character that is the same as ch1 or ch2 is encountered, ignoring case.
-     * If the character is the same as ch1 the value true is returned; otherwise, false is returned.
+     * It accepts input and stops program until non-whitespace character or ch (including) and
+     * returns smallest value of char, otherwise returns non-whitespace char that was read.
      *
-     * @param con
-     * @param ch1
-     * @param ch2
+     * @param InputStream input;
      *
-     *@return TRUE
-     *@return FALSE
+     * @param char ch;
+     *
+     * @return char resultChar
      *
      */
-     public void readUntil();
+    public void skipSpace(){
 
+    }
 
     /**
-     * Accepts an instance of an InputStream.
-     * It consumes up to and including the first non-whitespace character from the InputStream or up to and including ch.
+     * It accepts stream and stops program when a the same character is encountered: ch1 ch2.
+     * If true returns: ordered characters from input as String.
      *
-     *@param ch
+     *
+     *
+     * @param InputStream input
+     *
+     * @param char ch1
+     *
+     * @param char ch2;
+     *
+     * @return str result;
+     *
      */
-    public void skipSpace();
+
+    readString(){
+
+    }
+
+
+
+
+
+
+
 
 
 
