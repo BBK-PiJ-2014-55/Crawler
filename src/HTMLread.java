@@ -2,7 +2,7 @@
  * Created by karolsudol on 24/03/15.
  */
 
-import java.io.InputStream;
+import java.io.BufferedReader;
 
 // class to accept stream and constructing strings from information read
 
@@ -16,7 +16,7 @@ public class HTMLread {
     }
 
     /**
-     * It accepts stream and stops program when a the same character is encountered (ignoring case).
+     * It accepts stream and stops program when the same character is encountered (ignoring case).
      * True if ch1 and ch2 are present;
      *
      * @param con;
@@ -29,9 +29,9 @@ public class HTMLread {
      * @return boolean found;
      *
      */
-     public boolean readUntil(InputStream con, char ch1, char ch2){
-         boolean found = false;
-         return  found;
+     public boolean readUntil(BufferedReader con, char ch1, char ch2){
+         boolean present = false;
+         return  present;
 
      }
 
@@ -47,14 +47,14 @@ public class HTMLread {
      * @return resultChar;
      *
      */
-    public char skipSpace(InputStream input, char ch){
+    public char skipSpace(BufferedReader input, char ch){
         char resultChar = Character.MIN_VALUE;
         return resultChar;
 
     }
 
     /**
-     * It accepts stream and stops program when a the same character is encountered: ch1 ch2.
+     * It accepts stream and stops program when the same character is encountered: ch1 ch2.
      * If true returns: ordered characters from input as String.
      *
      * @param input;
@@ -66,9 +66,9 @@ public class HTMLread {
      * @return result;
      *
      */
-    public String readString(InputStream input, char ch1, char ch2 ){
-        String result = "";
-        return result;
+    public String readString(BufferedReader input, char ch1, char ch2 ){
+        String resultString = "";
+        return resultString;
 
     }
 

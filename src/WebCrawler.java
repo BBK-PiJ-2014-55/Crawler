@@ -5,6 +5,7 @@
 import java.util.LinkedList;
 import java.net.URL;
 
+
 public class WebCrawler {
 
     private LinkedList<String[]> tempTable;
@@ -17,6 +18,7 @@ public class WebCrawler {
 
 
     public static void main(String[] args) {
+
 
     }
 
