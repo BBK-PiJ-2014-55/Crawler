@@ -1,4 +1,4 @@
-/**
+package Collector; /**
  * Created by karolsudol on 24/03/15.
  */
 
@@ -23,16 +23,6 @@ public class WebCrawler {
 
     public static void main(String[] args) {
 
-        try {
-            Document doc = Jsoup.connect("http://en.jsoup.org/").get();
-            Elements links = doc.select("a");
-            for (Element e: links){
-                System.out.println(e.attr("abs:href"));
-
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
 
