@@ -1,15 +1,23 @@
 /**
  * Created by karolsudol on 24/03/15.
- */
+
+
 
 import java.io.BufferedReader;
+import java.net.HttpURLConnection;
+import java.io.*;
+import java.net.*;
+
 
 // class to accept stream and constructing strings from information read
 
 public class HTMLread {
 
-    //position of read character
-    private int charRead;
+    String domain = "";
+
+    URL url = new URL(domain);
+
+    HttpURLConnection con = url.openConnection();
 
     //constructor
     public HTMLread() {
@@ -23,14 +31,21 @@ public class HTMLread {
      *
      * @param ch1;
      *
-     * @param ch2;
+     * @param ch2
      *
      *
-     * @return boolean found;
+     * @return boolean present;
      *
-     */
+     *
      public boolean readUntil(BufferedReader con, char ch1, char ch2){
          boolean present = false;
+         try {
+             char val = con.read();
+             while (val.equalsIgnoreCase != ch1 || val != ch2)
+         } try {
+
+         }
+
          return  present;
 
      }
@@ -46,7 +61,7 @@ public class HTMLread {
      *
      * @return resultChar;
      *
-     */
+     *
     public char skipSpace(BufferedReader input, char ch){
         char resultChar = Character.MIN_VALUE;
         return resultChar;
@@ -65,7 +80,7 @@ public class HTMLread {
      *
      * @return result;
      *
-     */
+     *
     public String readString(BufferedReader input, char ch1, char ch2 ){
         String resultString = "";
         return resultString;
@@ -83,3 +98,4 @@ public class HTMLread {
 
 
 }
+ */

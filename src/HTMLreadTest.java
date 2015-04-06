@@ -1,8 +1,10 @@
+/**
+
 // import static HTMLread.*;
 
 
-import junit.framework.TestCase;
 
+import junit.framework.TestCase;
 import java.io.BufferedReader;
 import java.net.URL;
 import java.io.InputStreamReader;
@@ -10,7 +12,7 @@ import java.io.IOException;
 
 public class HTMLreadTest extends TestCase {
     private URL TestUrl;
-    private BufferedReader TestInputStream;
+    private BufferedReader brTest;
     private String url = "http://www.yell.com/";
 
 
@@ -18,7 +20,7 @@ public class HTMLreadTest extends TestCase {
     public HTMLreadTest(){
         try {
             this.TestUrl = new URL(url);
-            this.TestInputStream = new BufferedReader(new InputStreamReader(this.TestUrl.openStream()));
+            this.brTest = new BufferedReader(new InputStreamReader(this.TestUrl.openStream()));
 
         } catch (IOException ex){
             ex.printStackTrace();
@@ -28,22 +30,21 @@ public class HTMLreadTest extends TestCase {
 
     // ******** TESTS for HTMLRead.readUntil() ********
     // method parameters for testReadUntil
-    private char a1 = 'a';
-    private char a2 = 'b';
-    private char a3 = 'c';
-    private char a4 = 'c';
+    private char a1 = '<';
+    private char a2 = '>';
+
 
     @org.junit.Test
     public void testReadUntil() {
         HTMLread  TestRead = new HTMLread();
-        boolean present = TestRead.readUntil(this.TestInputStream,a1,a2);
+        boolean present = TestRead.readUntil(this.brTest,a1,a2);
         assertEquals(true,present);
     }
 
     @org.junit.Test
     public void testReadUntilCaseSensitive() {
         HTMLread  TestRead = new HTMLread();
-        boolean present = TestRead.readUntil(this.TestInputStream,a3,a4);
+        boolean present = TestRead.readUntil(this.brTest,a1,a2);
         assertEquals(true,present);
     }
 
@@ -56,12 +57,12 @@ public class HTMLreadTest extends TestCase {
     @org.junit.Test
     public void testSkipSpaceIncWhiteSpace() {
         HTMLread  TestRead = new HTMLread();
-        char result = TestRead.skipSpace(this.TestInputStream,b1);
+        char result = TestRead.skipSpace(this.brTest,b1);
     }
 
     public void testSkipSpaceExclWhiteSpace() {
         HTMLread  TestRead = new HTMLread();
-        char result = TestRead.skipSpace(this.TestInputStream,b2);
+        char result = TestRead.skipSpace(this.brTest,b2);
     }
 
 
@@ -74,13 +75,13 @@ public class HTMLreadTest extends TestCase {
     @org.junit.Test
     public void testReadStringExclNull(){
         HTMLread  TestRead = new HTMLread();
-        String resultString = TestRead.readString(this.TestInputStream,c1,c2);
+        String resultString = TestRead.readString(this.brTest,c1,c2);
     }
 
     @org.junit.Test
     public void testReadStringIncNull(){
         HTMLread  TestRead = new HTMLread();
-        String resultString = TestRead.readString(this.TestInputStream,c3,c4);
+        String resultString = TestRead.readString(this.brTest,c3,c4);
     }
 
 
@@ -113,3 +114,5 @@ public class HTMLreadTest extends TestCase {
 
 
 }
+
+*/
