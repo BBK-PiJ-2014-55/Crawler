@@ -51,7 +51,7 @@ public class Anchor {
 
     /**
      *
-     * used for database
+     * database methods
      *
      * @param domain
      * @param anchorHash

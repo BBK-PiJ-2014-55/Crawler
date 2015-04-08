@@ -18,6 +18,26 @@ public class WebPage {
     private int postcodeParseStatus;
     private Document document;
 
+    public Document getDocument() {
+        return document;
+    }
+
+    public int getPostcodeParseStatus() {
+        return postcodeParseStatus;
+    }
+
+    public int getAnchorParseStatus() {
+        return anchorParseStatus;
+    }
+
+    public String getWebPageHash() {
+        return webPageHash;
+    }
+
+    public Anchor getAnchor() {
+        return anchor;
+    }
+
     /**
      *
      * crawler method (constructor)
@@ -28,12 +48,12 @@ public class WebPage {
         this.anchor = anchor;
     }
 
-    private void getWEbDocument(){
+    public void getWEbDocument(){
 
 
         try {
             document = Jsoup.connect(anchor.getAnchorUrl()).get();
-            Elements links = doc.select("a");
+            Elements links = document.select("a");
             for (Element e: links){
                 System.out.println(e.attr("abs:href"));
 
