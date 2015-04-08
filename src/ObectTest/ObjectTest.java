@@ -1,38 +1,25 @@
-/**
 package ObectTest;
 
 import Objects.Anchor;
 import Objects.Domain;
 import Objects.WebPage;
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
-
+import org.junit.*;
 
 public class ObjectTest {
 
-    public ObjectTest(){
 
-    }
-
-
-    @Test
-    public void loadWebDoc() {
-
-        Domain domain = new Domain("1234-123","http://jsoup.org/");
-
-        Anchor anchor = new Anchor(domain,"1234-123","http://jsoup.org/");
-
+    @org.junit.Test
+    public void LoadWebPage(){
+        Domain domain = new Domain("1234-123","http://jsoup.org");
+        Anchor anchor = new Anchor(domain,"1234-123","http://jsoup.org");
         WebPage webPage = new WebPage(anchor);
-        webPage.
+        webPage.getWEbDocument();
 
-        Assert.assertTrue("retriveTest", webPage.g);
 
+
+        Assert.assertTrue("result", webPage.getDocument() != null);
 
     }
-
-
 
     @Before
     public void setUp() throws Exception {
@@ -44,4 +31,3 @@ public class ObjectTest {
 
     }
 }
-*/
