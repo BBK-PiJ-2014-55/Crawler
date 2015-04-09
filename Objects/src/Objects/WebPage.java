@@ -44,8 +44,11 @@ public class WebPage {
      *
      * @param anchor
      */
-    public WebPage(Anchor anchor) {
+    public WebPage(Anchor anchor) throws Exception {
         this.anchor = anchor;
+        this.webPageHash = Hasher.toSha256(anchor.getAnchorHash() + CommonFunc.getTimestamp().toString());
+        this.anchorParseStatus = 0;
+        this.postcodeParseStatus = 0;
     }
 
     public void getWEbDocument(){

@@ -32,6 +32,14 @@ public class Domain {
         return modified;
     }
 
+    public Domain(String domainUrl) throws Exception {
+        this.domainHash = Hasher.toSha256(domainUrl);
+        this.domainUrl = domainUrl;
+        this.activated = true;
+        this.modified = CommonFunc.getTimestamp();
+        this.crated = CommonFunc.getTimestamp();
+    }
+
     public Domain(String domainHash, String domainUrl) {
         this.domainHash = domainHash;
         this.domainUrl = domainUrl;
