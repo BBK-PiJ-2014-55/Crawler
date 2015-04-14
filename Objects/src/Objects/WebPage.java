@@ -12,6 +12,8 @@ import java.io.IOException;
  */
 public class WebPage {
 
+
+
     private Anchor anchor;
     private String webPageHash;
     private int anchorParseStatus;
