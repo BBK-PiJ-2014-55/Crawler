@@ -11,7 +11,7 @@ import javax.xml.xpath.*;
 
 public class Xpath {
 
-    public String getXpathValue(Document doc, String strXpath) throws XPathExpressionException {
+    public static String getXpathValue(Document doc, String strXpath) throws XPathExpressionException {
         XPath xPath = XPathFactory.newInstance().newXPath();
         XPathExpression ex = xPath.compile(strXpath);
         String resultData = null;

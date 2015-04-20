@@ -1,6 +1,6 @@
-/**
 
-// import static HTMLread.*;
+
+// import static HTMLops.HTMLread.*;
 
 
 
@@ -36,14 +36,14 @@ public class HTMLreadTest extends TestCase {
 
     @org.junit.Test
     public void testReadUntil() {
-        HTMLread  TestRead = new HTMLread();
+        HTMLops.HTMLread  TestRead = new HTMLops.HTMLread();
         boolean present = TestRead.readUntil(this.brTest,a1,a2);
         assertEquals(true,present);
     }
 
     @org.junit.Test
     public void testReadUntilCaseSensitive() {
-        HTMLread  TestRead = new HTMLread();
+        HTMLops.HTMLread  TestRead = new HTMLops.HTMLread();
         boolean present = TestRead.readUntil(this.brTest,a1,a2);
         assertEquals(true,present);
     }
@@ -56,12 +56,12 @@ public class HTMLreadTest extends TestCase {
     private char b2 = 'b';
     @org.junit.Test
     public void testSkipSpaceIncWhiteSpace() {
-        HTMLread  TestRead = new HTMLread();
+        HTMLops.HTMLread  TestRead = new HTMLops.HTMLread();
         char result = TestRead.skipSpace(this.brTest,b1);
     }
 
     public void testSkipSpaceExclWhiteSpace() {
-        HTMLread  TestRead = new HTMLread();
+        HTMLops.HTMLread  TestRead = new HTMLops.HTMLread();
         char result = TestRead.skipSpace(this.brTest,b2);
     }
 
@@ -74,21 +74,21 @@ public class HTMLreadTest extends TestCase {
     private char c4 = 'a';
     @org.junit.Test
     public void testReadStringExclNull(){
-        HTMLread  TestRead = new HTMLread();
+        HTMLops.HTMLread  TestRead = new HTMLops.HTMLread();
         String resultString = TestRead.readString(this.brTest,c1,c2);
     }
 
     @org.junit.Test
     public void testReadStringIncNull(){
-        HTMLread  TestRead = new HTMLread();
+        HTMLops.HTMLread  TestRead = new HTMLops.HTMLread();
         String resultString = TestRead.readString(this.brTest,c3,c4);
     }
 
 
 
 
-    //    @org.junit.Test
-//    public void testReadUntil() throws Exception {
+      @org.junit.Test
+    public void testReadUntil() throws Exception {
 //        InputStream streamA = null;
 //        InputStream streamB = null;
 //
@@ -105,14 +105,8 @@ public class HTMLreadTest extends TestCase {
 //
 //        boolean resultA = readUntil();
 //        boolean
-//
-//
-//
-//
-//
 //    }
 
 
 }
 
-*/

@@ -15,7 +15,8 @@ import java.net.URLEncoder;
 /**
  * Created by karolsudol on 09/04/15.
  */
-public class Location extends Xpath {
+public class Location  {
+
     private static final String UrlReqGeoCode = "http://maps.googleapis.com/maps/api/geocode/xml?sensor=false&";
     private static HttpClient httpClient = new HttpClient(new MultiThreadedHttpConnectionManager());
     private String LatStr;
@@ -48,10 +49,10 @@ public class Location extends Xpath {
                 is.setCharacterStream(new StringReader("<"+writer.toString().trim()));
                 Document doc = db.parse(is);
 
-                LatStr = getXpathValue(doc, "//GeocodeResponse/result/geometry/location/lat/text()");
+                LatStr = Xpath.getXpathValue(doc, "//GeocodeResponse/result/geometry/location/lat/text()");
                 System.out.println("Latitude:" + LatStr);
 
-                LongStr = getXpathValue(doc,"//GeocodeResponse/result/geometry/location/lng/text()");
+                LongStr = Xpath.getXpathValue(doc,"//GeocodeResponse/result/geometry/location/lng/text()");
                 System.out.println("Longitude:" + LongStr);
 
 
