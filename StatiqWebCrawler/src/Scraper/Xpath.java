@@ -1,4 +1,4 @@
-package Objects;
+package Scraper;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;

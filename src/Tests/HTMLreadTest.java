@@ -1,4 +1,4 @@
-
+package Tests;
 
 // import static HTMLops.HTMLread.*;
 
@@ -89,8 +89,8 @@ public class HTMLreadTest extends TestCase {
 
       @org.junit.Test
     public void testReadUntil() throws Exception {
-//        InputStream streamA = null;
-//        InputStream streamB = null;
+        InputStream streamA = null;
+        InputStream streamB = null;
 //
 //
 //        try {

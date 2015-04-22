@@ -1,5 +1,6 @@
-package Objects;
+package Scraper;
 
+import Interfaces.GetLocation;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.MultiThreadedHttpConnectionManager;
 import org.apache.commons.httpclient.methods.GetMethod;
@@ -15,13 +16,18 @@ import java.net.URLEncoder;
 /**
  * Created by karolsudol on 09/04/15.
  */
-public class Location  {
+public class Location implements GetLocation {
 
     private static final String UrlReqGeoCode = "http://maps.googleapis.com/maps/api/geocode/xml?sensor=false&";
     private static HttpClient httpClient = new HttpClient(new MultiThreadedHttpConnectionManager());
-    private String LatStr;
-    private String LongStr;
-    public void getLongitudeLatitude(String address) {
+    private String latStr;
+    private String longStr;
+    private Float latFloat;
+    private Float longFloat;
+    private String latXpath = "//GeocodeResponse/result/geometry/location/lat/text()";
+    private String longXpath = "//GeocodeResponse/result/geometry/location/lng/text()";
+
+    public Float[] getLongitudeLatitude(String address) {
         try {
             StringBuilder urlBuilder = new StringBuilder(UrlReqGeoCode);
             if (StringUtils.isNotBlank(address)) {
@@ -33,7 +39,7 @@ public class Location  {
                 httpClient.executeMethod(getMethod);
                 Reader reader = new InputStreamReader(getMethod.getResponseBodyAsStream(), getMethod.getResponseCharSet());
 
-                int data = reader.read();
+                int data;  //reader.read();
                 char[] buffer = new char[1024];
                 Writer writer = new StringWriter();
                 while ((data = reader.read(buffer)) != -1) {
@@ -43,17 +49,19 @@ public class Location  {
                 String result = writer.toString();
                 System.out.println(result.toString());
 
-                DocumentBuilderFactory docBuilPath = DocumentBuilderFactory.newInstance();
-                DocumentBuilder db = docBuilPath.newDocumentBuilder();
+                DocumentBuilderFactory docBuildPath = DocumentBuilderFactory.newInstance();
+                DocumentBuilder db = docBuildPath.newDocumentBuilder();
                 InputSource is = new InputSource();
                 is.setCharacterStream(new StringReader("<"+writer.toString().trim()));
                 Document doc = db.parse(is);
 
-                LatStr = Xpath.getXpathValue(doc, "//GeocodeResponse/result/geometry/location/lat/text()");
-                System.out.println("Latitude:" + LatStr);
+                latStr = Xpath.getXpathValue(doc, latXpath);
+                latFloat = Float.parseFloat(latStr);
+                //System.out.println("Latitude:" + latStr);
 
-                LongStr = Xpath.getXpathValue(doc,"//GeocodeResponse/result/geometry/location/lng/text()");
-                System.out.println("Longitude:" + LongStr);
+                longStr = Xpath.getXpathValue(doc,longXpath);
+                longFloat = Float.parseFloat(longStr);
+                //System.out.println("Longitude:" + longStr);
 
 
             } finally {
@@ -61,8 +69,7 @@ public class Location  {
             }
         } catch (Exception e) {
             e.printStackTrace();
-        }
+        } return new Float[] {latFloat, longFloat};
     }
-
 
 }
