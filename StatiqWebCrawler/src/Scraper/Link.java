@@ -8,7 +8,7 @@ import org.w3c.dom.Document;
  */
 public class Link implements GetLinks {
 
-    private String links;
+    public String links;
     private String xPathUrl = "//*[@id=\"bottomPageNumbers\"]/div/a[2]";
 
     public String getLinks (Document htmlDoc){
